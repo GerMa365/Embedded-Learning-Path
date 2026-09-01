@@ -1,10 +1,17 @@
 #include <stdio.h>
 
-int main(void){
+void led_init(void){
 
-    printf("LED PROJECT STARTED.\n");
-
-    return 0;
-
+    printf("LED initialized.\n");
 
 }
+
+
+int main(void){
+
+    led_init();
+    printf("LED project started\n");
+    return 0;
+
+}
+
