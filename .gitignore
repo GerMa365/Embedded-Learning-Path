@@ -25,4 +25,19 @@ ignore_dir_learning/
 #这里的 / 也不是指 Windows 的 D:\ 或整个电脑的根目录，而是相对于这份 .gitignore 所在的目录。
 
 
+# /ignore_wildcard_learning/*.log
+#要忽略实验目录中的所有 .log 文件，但保留 .txt 文件的正常提示
+#开头的 /  :  从这份 .gitignore 所在目录开始匹配
+#ignore_wildcard_learning/ : 指定实验目录
+# *.log : 匹配名称以 .log 结尾的对象
+# 单个 * 可以匹配零个或多个字符，不会跨越路径分隔符 /。因此，这条规则针对实验目录的直接成员，不会匹配更深子目录里的 .log 文件
+# “实验目录的直接成员”就是直接放在这个目录里面的文件或子目录，中间没有再隔一层目录。
+
+/ignore_wildcard_learning/**/*.log
+# 忽略实验目录及其所有子目录中的 .log 文件
+# **/	在这种写法中，匹配零层或多层目录
+# “零层目录”指实验目录与文件之间没有中间目录，即零层。如：ignore_wildcard_learning/build.log
+#  ignore_wildcard_learning/sub/test.log 这个是一层：sub
+# ignore_wildcard_learning/sub/deeper/test.log 这个是两层：sub、deeper
+
 
