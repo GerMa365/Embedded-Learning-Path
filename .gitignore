@@ -11,5 +11,18 @@
 # 保存了就立刻生效
 
 ignore_pattern_learning.txt
+#匹配根目录及各级子目录中的这个名称
+
+
+#开头的 / 限定匹配位置；末尾的 / 限定匹配类型为目录（Directory）
+
+ignore_dir_learning/
+#匹配根目录及各级子目录中的同名目录（Directory），限定这条规则只匹配目录，gi不匹配同名普通文件（Regular File）
+
+
+#/ignore_dir_learning
+#（从这个 .gitignore 所在的目录开始匹配指定路径。）先找到 .gitignore 所在的文件夹，再在这个文件夹中找名为 ignore_dir_learning 的文件或目录。
+#这里的 / 也不是指 Windows 的 D:\ 或整个电脑的根目录，而是相对于这份 .gitignore 所在的目录。
+
 
 
