@@ -9,3 +9,7 @@
 #：这里是 .gitignore 的注释符号。
 # /local_config_learning.ini：匹配此根目录下的实验文件。
 # 保存了就立刻生效
+
+ignore_pattern_learning.txt
+
+
