@@ -40,4 +40,23 @@ ignore_dir_learning/
 #  ignore_wildcard_learning/sub/test.log 这个是一层：sub
 # ignore_wildcard_learning/sub/deeper/test.log 这个是两层：sub、deeper
 
+!/ignore_wildcard_learning/keep.log
+#对根层的 keep.log 设置例外，使它不再被上述规则忽略。
+#“不再忽略”不等于“自动跟踪（Track）”。 如果 keep.log 是新建文件，它会显示为未跟踪文件（Untracked File），仍需要执行 git add 才会加入暂存区（Index）。
+#这里没有忽略 ignore_wildcard_learning 目录本身。
 
+#/example/
+#!/example/keep.log
+#这里第一行已经忽略整个 example 目录。Git 不会继续遍历（Traverse）这个被忽略的目录，所以第二行无法单独让内部的 keep.log 重新显示。
+
+#/example/*
+#!/example/keep.log
+#目标是“忽略目录内其他内容，只保留 keep.log 的正常提示”
+
+
+#还要注意规则顺序
+#对于同一份 .gitignore 中匹配同一路径的规则，后面的匹配规则决定结果。
+#因此，例外通常写在对应的忽略规则后面：
+#/example/*
+#!/example/keep.log
+#这里“保留”只表示不被忽略（Not Ignored）。新建的 keep.log 仍需执行 git add，才会被跟踪（Tracked）。 
