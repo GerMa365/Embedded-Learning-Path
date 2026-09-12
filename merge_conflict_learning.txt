@@ -1,1 +1,1 @@
-led_mode=on
+led_mode=blink
