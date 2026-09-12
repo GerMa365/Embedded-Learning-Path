@@ -1,1 +1,2 @@
 led_mode=blink
+blink_interval_ms=500
